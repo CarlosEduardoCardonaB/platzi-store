@@ -13,6 +13,7 @@ export class AppComponent {
 
   objeto = {};
 
+  //Producto se encuentra creado en product.module.ts
   products: Product[] = [
     {
       id: '1',
