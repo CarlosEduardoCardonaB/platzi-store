@@ -1,0 +1,35 @@
+<input type="text" [(ngModel)]="title">
+
+{{title}}
+{{1+2}}
+
+<div *ngIf="title === 'carlos'">
+  Su nombre es carlos eduardo
+</div>
+
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'Eduardo'">Este es Eduardo</p>
+  <p *ngSwitchCase="'Juanita'">Esta es Juanita</p>
+  <p *ngSwitchCase="'Sixtina'">Esta es Sixtina</p>
+  <p *ngSwitchCase="'Mirry'">Este es Mirry</p>
+  <p *ngSwitchCase="'Martha'">Este es Mirry</p>
+  <p *ngSwitchDefault="">No hay Match</p>
+</div>
+
+<button (click)="addNombre()">Añadir Nombre</button>
+
+<ul>
+  <li *ngIf="items.length === 0">No hay items en la lista</li>
+  <li *ngFor="let name of items; index as i">
+    {{name}} {{i}}
+    <button (click)="borrarNombre(i)">Borrar Nombre</button>
+  </li>
+</ul>
+
+
+<div *ngFor="let product of products">
+  {{product.title}}
+  <img [src]="product.image" alt="">
+  {{product.price}}
+</div>
+
