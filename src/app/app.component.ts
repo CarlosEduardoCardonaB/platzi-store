@@ -13,7 +13,7 @@ export class AppComponent {
 
   objeto = {};
 
-  //Producto se encuentra creado en product.module.ts
+  //Modelo del producto se encuentra creado en product.module.ts
   products: Product[] = [
     {
       id: '1',
@@ -65,6 +65,11 @@ export class AppComponent {
 
   borrarNombre(index: number){
     this.items.splice(index, 1);
+  }
+
+  clickProduct(id: number){
+    console.log('product');
+    console.log(id);
   }
 
 }

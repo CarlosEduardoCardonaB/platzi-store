@@ -3,9 +3,6 @@
 {{title}}
 {{1+2}}
 
-<!-- Este htm está construido en product.component.html y su codigo ts esta en product.component.ts -->
-<app-product></app-product>
-
 <div *ngIf="title === 'carlos'">
   Su nombre es carlos eduardo
 </div>
@@ -29,10 +26,19 @@
   </li>
 </ul>
 
-
+<!-- ngFor sin componente -->
 <div *ngFor="let product of products">
   {{product.title}}
   <img [src]="product.image" alt="">
   {{product.price}}
 </div>
+
+
+<!-- ngFor con componente, enviando datos a product.component.ts -->
+<div *ngFor="let product of products">
+  <!-- Este htm del tag <app-product> está construido en product.component.html y su codigo ts esta en product.component.ts -->
+    <!-- A excepción del "(productClicked)="clickProduct($event)" que es un evento de app.components.ts -->
+  <app-product (productClicked)="clickProduct($event)" [product]="product"></app-product>
+</div>
+
 
