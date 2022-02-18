@@ -1,11 +1,27 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { 
+    Component, 
+    Input, 
+    Output, 
+    EventEmitter, 
+    OnChanges, 
+    OnInit, 
+    SimpleChanges, 
+    DoCheck, 
+    OnDestroy 
+} from "@angular/core";
 import { Product } from "../product.module";
 
 @Component({
     selector: 'app-product',
-    templateUrl: './product.component.html'
+    templateUrl: './product.component.html',
+    styleUrls: ['./product.component.scss']
 })
-export class ProductComponent {
+
+//Declaración con OnChanges y sin DoCheck
+//export class ProductComponent implements OnInit, OnChanges {
+
+//Declaración con DoCheck y sin OnChanges para que no choquen  
+export class ProductComponent implements OnInit, DoCheck, OnDestroy {
     
     //Este metodo de aqui abajo funciona sin el import de Input. O sea asingando valores quemados.
     // product: Product = {
@@ -16,10 +32,29 @@ export class ProductComponent {
     //     description: 'Camiseta tipo Polo'
     // }
     constructor(){
-        this.product = Input();
+        //this.product = Input();
+        console.log('constructor');
     }
 
-    @Input() product: Product;
+    // ngOnChanges(changes: SimpleChanges){
+    //     console.log('ngOnChanges');
+    //     console.log(changes);
+    // }
+
+    
+    ngOnInit(){
+        console.log('ngOnInit');
+    }
+
+    ngDoCheck(){
+        console.log('ngDoCheck');
+    }
+
+    ngOnDestroy(){
+        console.log('onDestroy');
+    }
+
+    @Input() product!: Product;
     @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
     addCart(){
