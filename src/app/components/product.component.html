@@ -1,8 +1,11 @@
 
-<h3>Soy un componente</h3>
+<h3 appHighligth>Soy un componente</h3>
 
-<h3>{{product.title}}</h3>
+<h3 >{{product.title | uppercase}}</h3>
 <img [src]="product.image" alt="">
-<strong>{{product.price}}</strong>
-<li>{{product.description}}</li>
+<strong>{{product.price | currency}}</strong>
+<p>{{product.description | slice:0:10}}</p>
+<!-- Documentación de fechas en https://angular.io/api/common/DatePipe -->
+<p>{{today | date:'HH:MM'}}</p>
+<p>{{product.price | exponential}}</p>
 <button (click)="addCart()">Agregar al carrito</button>

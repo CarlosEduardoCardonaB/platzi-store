@@ -11,6 +11,8 @@ export class AppComponent {
 
   items = ['Eduardo', 'Juanita', 'Sixtina', 'Mirry'];
 
+  power = 10;
+
   objeto = {};
 
   //Modelo del producto se encuentra creado en product.module.ts
