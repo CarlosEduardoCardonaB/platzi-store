@@ -1,0 +1,19 @@
+<p>products works!</p>
+
+<!-- ngFor con componente, enviando datos a product.component.ts -->
+<div class="product-grid">
+    <!-- Este htm del tag <app-product> está construido en product.component.html y su codigo ts esta en product.component.ts -->
+      <!-- A excepción del "(productClicked)="clickProduct($event)" que es un evento de app.components.ts -->
+    <app-product  
+        *ngFor="let product of products" 
+        (productClicked)="clickProduct($event)" 
+        [product]="product">
+    </app-product>
+  </div>
+
+  <!-- ngFor sin componente -->
+<!-- <div *ngFor="let product of products">
+  {{product.title}}
+  <img [src]="product.image" alt="">
+  {{product.price}}
+</div> -->
