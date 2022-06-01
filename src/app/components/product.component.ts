@@ -54,7 +54,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
         console.log('onDestroy');
     }
 
-    @Input() product!: Product; //Aqui cargo los productos desde otro componente
+    @Input() product!: Product; //Aqui cargo los productos desde otro componente. Desde app/products/products.component.ts
     @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
     today = new Date();

@@ -7,11 +7,12 @@ body {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    // grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); //nos hace breackpoints cada 300px. Este se usa en vez del mediaquery
 }
 
-@media (min-width: 576px){
-    .product-grid {        
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+// @media (min-width: 576px){
+//     .product-grid {        
+//         grid-template-columns: repeat(3, 1fr);
+//     }
+// }
