@@ -1,10 +1,12 @@
+<!-- <app-header></app-header> --> 
+<!-- El header y el footer se van a llamar desde el componente layout -->
 <div>
-    <img [src]="product.image" alt="">
+    <img [src]="productDetail.image" alt="">
 </div>
 <div>
     <ul>
-        <li>Nombre: {{ product.title }}</li>
-        <li>Precio: {{ product.price | currency }}</li>
+        <li>Nombre: {{ productDetail.title }}</li>
+        <li>Precio: {{ productDetail.price | currency }}</li>
     </ul>
-    <p>{{ product.description }}</p>
+    <p>{{ productDetail.description }}</p>
 </div>

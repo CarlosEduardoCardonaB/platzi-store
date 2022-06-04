@@ -10,7 +10,8 @@ import { Product } from './../product.module';
 })
 export class ProductDetaliComponent implements OnInit {
 
-  product!: Product; 
+  //Declaración de la variable global para poder mostrarla en el "product-detali.component.html"
+  productDetail!: Product; 
 
   constructor( 
     private route: ActivatedRoute,
@@ -20,9 +21,11 @@ export class ProductDetaliComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.route.params.subscribe((params: Params) => {      
+    this.route.params.subscribe((params: Params) => {  
+      console.log(params);    
       const id = params['id'];
-      this.product = this.productsService.getProduct(id)!;      
+      this.productDetail = this.productsService.getProduct(id)!;
+      console.log(this.productDetail);    
     });
   }
 

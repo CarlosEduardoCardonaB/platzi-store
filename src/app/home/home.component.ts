@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core'; //AfterViewInit me dice cuando los elementos hijos han sido renderizados
 import Swiper from 'swiper';
 
 @Component({
@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(){
       this.mySwiper = new Swiper('.swiper');
+      //El busca la clase de css llamada ".swiper" implementada en "banner.component.html". 
   }
 
 }
