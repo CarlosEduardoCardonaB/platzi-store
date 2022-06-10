@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HighligthDirective,
     HeaderComponent,
     FooterComponent,
+    
   ],
   exports: [
     ExponentialPipe,

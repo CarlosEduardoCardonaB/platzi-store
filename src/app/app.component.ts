@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Product} from './product.module';
 
+
 @Component({
   selector: 'app-root',
   //templateUrl: './app.component.html',   //Esta manera es llamando a un archivo, pero como ese archivo solo va a tener una linea lo podemos hacer de la siguiente manera:

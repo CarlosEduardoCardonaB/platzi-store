@@ -5,7 +5,7 @@
     <!-- Este htm del tag <app-product> está construido en product.component.html y su codigo ts esta en product.component.ts -->
       <!-- A excepción del "(productClicked)="clickProduct($event)" que es un evento de app.components.ts -->
     <app-product  
-        *ngFor="let product of products" 
+        *ngFor="let product of productsList" 
         (productClicked)="clickProduct($event)" 
         [product]="product">
     </app-product>

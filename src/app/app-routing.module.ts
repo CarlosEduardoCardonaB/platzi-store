@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 //import { HomeComponent } from './home/home.component'; //este se borra por que la ruta queda en la carpeta home/home-routing.module.ts
-import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component';
-import { DemoComponent } from './demo/demo.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetaliComponent } from './product-detali/product-detali.component';
+//import { ProductsComponent } from './products/products.component';
+//import { ContactComponent } from './contact/contact.component';
+//import { DemoComponent } from './demo/demo.component';
+//import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+//import { ProductDetaliComponent } from './product-detali/product-detali.component';
 import { LayoutComponent } from './layout/layout.component'
+
+import { AdminGuard } from './admin.guard'; //guardian para validar ingreso a rutas dependiendo del rol por ej
 
 const routes: Routes = [
   {
@@ -26,19 +28,24 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent
+        loadChildren: () => import('./products/products.module').then(m => m.ProductModule)
+        //component: ProductsComponent
       },
-      {
-        path: 'products/:id',
-        component: ProductDetaliComponent
-      },
+      // {
+      //   path: 'products/:id',
+      //   component: ProductDetaliComponent
+      // },
       {
         path: 'contact',
-        component: ContactComponent
+        loadChildren: () => import('./contact/contact.module').then(m => m.contactModule)
+        //component: ContactComponent
       },
       {
         path: 'demo',
-        component: DemoComponent
+        loadChildren: () => import('./demo/demo.module').then(m => m.demoComponentModule)
+        // canActivate: [AdminGuard], //Este es el guardían en admin.guards.ts
+        // loadChildren: () => import('./demo/demo.module').then(m => m.demoComponentModule)
+        //component: DemoComponent
       },
     ]
   },
@@ -71,7 +78,8 @@ const routes: Routes = [
   // },
   {
     path: '**',
-    component: PageNotFoundComponent    
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.pageNotFoundModule)
+    //component: PageNotFoundComponent    
   }
 ];
 

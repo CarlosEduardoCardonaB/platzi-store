@@ -9,7 +9,8 @@ import {
     DoCheck, 
     OnDestroy 
 } from "@angular/core";
-import { Product } from "../product.module";
+//import { Product } from "../product.module";
+import { Product } from "src/app/product.module";
 
 @Component({
     selector: 'app-product',
