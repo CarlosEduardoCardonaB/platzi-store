@@ -5,6 +5,7 @@ import { ProductDetaliComponent } from './components/product-detali/product-deta
 import { ProductComponent } from './components/product/product.component';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
         CommonModule,
         ProductsRoutingModule,
         SharedModule,
+        MaterialModule
         
     ]
 })

@@ -18,7 +18,7 @@ export class DemoComponent implements OnInit {
 
   power = 10;
 
-  objeto = {};
+  //objeto = {};
 
   
 

@@ -1,11 +1,23 @@
-<nav>
-    <!-- A diferencia del "href" que recarga la página aqui se usa "routerLink" 
-        para solo cargar el contenido que se necesita sin recargar la página 
-        a esto se le llama single page aplication-->
-    <a routerLink="/home" routerLinkActive="active">Home</a>
-    <a routerLink="/products" routerLinkActive="active">Products</a>
-    <a routerLink="/contact" routerLinkActive="active">Contact</a>
-    <a routerLink="/demo" routerLinkActive="active">Demo</a>
-    <!-- el "routerLinkActive" sirve para colocarle la clase de css en "header.component.scss" cuando estamos 
-    en la ruta indicada -->
-</nav>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="row between-xs middle-xs header-row">
+            <nav>
+                <!-- A diferencia del "href" que recarga la página aqui se usa "routerLink" 
+                    para solo cargar el contenido que se necesita sin recargar la página 
+                    a esto se le llama single page aplication-->
+                <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+                <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+                <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+                <a mat-button routerLink="/demo" routerLinkActive="active">Demo</a>
+                <!-- el "routerLinkActive" sirve para colocarle la clase de css en "header.component.scss" cuando estamos 
+                en la ruta indicada -->            
+            </nav>
+        </div>
+        
+        <a mat-raised-button matBadge="4" matBadgeColor="accent">
+            <mat-icon>add_shopping_cart</mat-icon>
+            Carrito
+        </a>
+    </mat-toolbar-row>
+</mat-toolbar>
+

@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
-    margin: 0px;
-    padding: 0px;
-}
+//Despues de instalar Angular Material comentamos este estilo del body por que Angular material trae sus estilos. Linea 22
+// body {
+//     margin: 0px;
+//     padding: 0px;
+// }
 
 .product-grid {
     display: grid;
@@ -17,3 +18,6 @@ body {
 //         grid-template-columns: repeat(3, 1fr);
 //     }
 // }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

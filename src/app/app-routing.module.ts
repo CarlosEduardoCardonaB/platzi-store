@@ -42,8 +42,8 @@ const routes: Routes = [
       },
       {
         path: 'demo',
-        loadChildren: () => import('./demo/demo.module').then(m => m.demoComponentModule)
-        // canActivate: [AdminGuard], //Este es el guardían en admin.guards.ts
+        canActivate: [AdminGuard], //Este es el guardían en admin.guards.ts
+        loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
         // loadChildren: () => import('./demo/demo.module').then(m => m.demoComponentModule)
         //component: DemoComponent
       },

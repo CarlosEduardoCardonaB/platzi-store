@@ -7,5 +7,5 @@ en el archivo highlight.directive.ts en la linea "selector: '[appHighligth]'" --
 <p>{{product.description | slice:0:10}}</p><!--Aqui se usa un pipe recortar el string -->
 <p>{{today | date:'HH:MM'}}</p><!-- Documentación de fechas en https://angular.io/api/common/DatePipe -->
 <p>{{product.price | exponential}}</p>
-<button (click)="addCart()">Agregar al carrito</button>
+<button (click)="addCart()" mat-raised-button color="primary">Agregar al carrito</button>
 <a [routerLink]="['/products', product.id]">ver detalle</a>
