@@ -2,7 +2,7 @@
 <!-- El header y el footer se van a llamar desde el componente layout -->
 <p>demo works!</p>
 
-<input type="text" [(ngModel)]="title">
+<input type="text" [(ngModel)]="title" id="inputNombre">
 {{title}}
 {{1+2}}
 
@@ -31,7 +31,7 @@
 <ul>
   <li *ngIf="items.length === 0">No hay items en la lista</li>
   <li *ngFor="let name of items; index as i">
-    {{name}} {{i}}
+    {{i}} {{name}} 
     <button (click)="borrarNombre(i)">Borrar Nombre</button>
   </li>
 </ul>

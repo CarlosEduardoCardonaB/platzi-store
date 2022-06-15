@@ -23,7 +23,8 @@ export class DemoComponent implements OnInit {
   
 
   addNombre(){
-    this.items.push('nuevo item');
+    //this.items.push('nuevo item');
+    this.items.push(this.title);
   }
 
   borrarNombre(index: number){

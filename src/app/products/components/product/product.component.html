@@ -1,11 +1,35 @@
 
-<h3 appHighligth>Soy un componente</h3><!--el "appHighligth" es una directiva creada para dar estilos de manera dinámica. Esta está 
-en el archivo highlight.directive.ts en la linea "selector: '[appHighligth]'" -->
-<h3 >{{product.title | uppercase}}</h3> <!--Aqui se usa un pipe para transformar la letra a mayúscula. Este Pipe cumple la funcion de cambiar el formato -->
-<img [src]="product.image" alt="">
-<strong>{{product.price | currency}}</strong><!--Aqui se usa un pipe para dar formato de moneda -->
-<p>{{product.description | slice:0:10}}</p><!--Aqui se usa un pipe recortar el string -->
-<p>{{today | date:'HH:MM'}}</p><!-- Documentación de fechas en https://angular.io/api/common/DatePipe -->
-<p>{{product.price | exponential}}</p>
-<button (click)="addCart()" mat-raised-button color="primary">Agregar al carrito</button>
-<a [routerLink]="['/products', product.id]">ver detalle</a>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            {{product.title | uppercase}}<!--Aqui se usa un pipe para transformar la letra a mayúscula. Este Pipe cumple la funcion de cambiar el formato -->
+        </mat-card-title>
+        <mat-card-subtitle>
+            <strong>{{product.price | currency}}</strong><!--Aqui se usa un pipe para dar formato de moneda -->
+        </mat-card-subtitle>
+    </mat-card-header>
+    <div class="crop-image">
+        <img [src]="product.image" alt="">
+    </div>
+        
+    <mat-card-content>
+        <p>{{product.description | slice:0:10}}</p><!--Aqui se usa un pipe recortar el string -->
+        <p>{{today | date:'HH:MM'}}</p><!-- Documentación de fechas en https://angular.io/api/common/DatePipe -->
+        <p>{{product.price | exponential}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-raised-button [routerLink]="['/products', product.id]">ver detalle</a>
+        <button (click)="addCart()" mat-raised-button color="primary">Agregar al carrito</button>
+    </mat-card-actions>
+    
+</mat-card>
+
+    <!-- <h3 appHighligth>Soy un componente</h3> -->
+    <!--el "appHighligth" es una directiva creada para dar estilos de manera dinámica. Esta está 
+    en el archivo highlight.directive.ts en la linea "selector: '[appHighligth]'" -->
+    <!-- <h3 >{{product.title | uppercase}}</h3>  -->
+    <!--Aqui se usa un pipe para transformar la letra a mayúscula. Este Pipe cumple la funcion de cambiar el formato -->
+
+    
+   
+
