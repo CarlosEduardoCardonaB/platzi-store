@@ -1,12 +1,16 @@
 <!-- <app-header></app-header> --> 
 <!-- El header y el footer se van a llamar desde el componente layout -->
-<div>
-    <img [src]="productDetail.image" alt="">
-</div>
-<div>
-    <ul>
-        <li>Nombre: {{ productDetail.title }}</li>
-        <li>Precio: {{ productDetail.price | currency }}</li>
-    </ul>
-    <p>{{ productDetail.description }}</p>
+
+
+<div *ngIf="productDetail"> <!-- Este ngIf es apra validar que mientras el objeto no tenga la estructura correcta no lo renderice y asi no genera errores en el navegador -->
+    <div>
+        <img [src]="productDetail.image" alt="">
+    </div>
+    <div>
+        <ul>
+            <li>Nombre: {{ productDetail.title }}</li>
+            <li>Precio: {{ productDetail.price | currency }}</li>
+        </ul>
+        <p>{{ productDetail.description }}</p>
+    </div>
 </div>

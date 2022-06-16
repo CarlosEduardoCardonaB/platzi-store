@@ -18,8 +18,15 @@ export class ProductsComponent implements OnInit {
   productsList!: Product[]; //Modelo del producto se encuentra creado en product.module.ts
 
   ngOnInit(): void {
-    this.productsList = this.productsService.getAllProducts();
+    //Esta lista de productos la traíamos cuando los datos estaban quemados en products.service.ts. Se elimina cuando se hace peticion al ws en la funcion fetchProducts
+    //this.productsList = this.productsService.getAllProducts();
     //console.log(this.productsList)
+    this.fetchProducts();
+  }
+
+  fetchProducts()
+  {
+    this.productsService.getAllProducts().subscribe(products => this.productsList = products)
   }
 
 

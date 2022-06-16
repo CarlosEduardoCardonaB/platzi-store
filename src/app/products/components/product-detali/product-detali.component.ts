@@ -22,12 +22,20 @@ export class ProductDetaliComponent implements OnInit {
   }
 
   ngOnInit(){
+    //Estas líneas se utilizaban cuando estaban los datos quemados en el products.service.ts
     this.route.params.subscribe((params: Params) => {  
       console.log(params);    
       const id = params['id'];
-      this.productDetail = this.productsService.getProduct(id)!;
-      console.log(this.productDetail);    
-    });
+      this.fetchProduct(id);
+
+      //this.productDetail = this.productsService.getProduct(id)!;      
+      //console.log(this.productDetail);    
+    });  
+    
   }
+
+  fetchProduct(id: string){
+    this.productsService.getProduct(id).subscribe(productDetailWs => this.productDetail = productDetailWs);
+  };
 
 }
