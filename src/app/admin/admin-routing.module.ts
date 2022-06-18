@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductsLisComponent } from './components/products-lis/products-lis.component';
 import { ProductsTableComponent } from './components/products-table/products-table.component';
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'dashBoard',
         component: DashBoardComponent
+      },
+      {
+        path: 'prodList',
+        component: ProductsLisComponent
       }
     ]
   }

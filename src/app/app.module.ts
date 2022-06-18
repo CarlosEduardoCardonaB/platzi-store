@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 //import { ProductComponent } from './product/product.component';
-import { CartComponent } from './cart/cart.component';
+//import { CartComponent } from './cart/components/cart.component';
 //import { ExponentialPipe } from './exponential.pipe'; //Este después de la modularización es llevado al shared.module.ts
 //import { HighligthDirective } from './highligth.directive'; //Este después de la modularización es llevado al shared.module.ts
 //import { HomeComponent } from './home/home.component';//Este componente se migra hacia el /home/ después de implementar el lazy loading
@@ -27,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     //ProductComponent,
-    CartComponent,
+    //CartComponent,
     //ExponentialPipe, //Este después de la modularización es llevado al shared.module.ts
     //HighligthDirective, //Este después de la modularización es llevado al shared.module.ts
     //HomeComponent, //Este componente se migra hacia el /home después de implementar el lazy loading

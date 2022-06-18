@@ -13,10 +13,11 @@ import { demoRoutingModule } from "./demo-routign.module";
         DemoComponent               
     ],
     imports: [
-        FormsModule,
         CommonModule,
+        SharedModule,
         demoRoutingModule,
-        SharedModule        
+        FormsModule
+                
     ],   
 })
 export class DemoModule{}

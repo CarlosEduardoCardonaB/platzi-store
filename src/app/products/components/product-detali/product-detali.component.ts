@@ -38,4 +38,28 @@ export class ProductDetaliComponent implements OnInit {
     this.productsService.getProduct(id).subscribe(productDetailWs => this.productDetail = productDetailWs);
   };
 
+  createProduct(){
+    const prodNew: Product = {
+      id: "93780",
+      title: "Alambrito para amarrar el pan",
+      price: 23400,
+      description: "Amarra la bolsita para que no se dañe el pan",
+      image: "https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/cual-es-el-significado-de-lo-alambres-del-pan-colores.jpg"
+    };
+      this.productsService.createProduct(prodNew)
+      .subscribe(productN =>{console.log(productN)});
+  }
+
+  updateProduct(){
+    const updateProd: Partial<Product> = {
+      description: "Amarra la bolsita para que no se dañe el pan y permanezca fresco",      
+    };
+      this.productsService.updateProduct("93780", updateProd)
+      .subscribe(productUpdate =>{console.log(productUpdate)});
+  }
+
+  deleteProduct(){
+    this.productsService.delteProduct("93780").subscribe(rta => console.log(rta));
+  }
+
 }

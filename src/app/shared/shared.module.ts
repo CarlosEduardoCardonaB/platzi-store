@@ -6,6 +6,8 @@ import { ExponentialPipe } from './pipes/exponential/exponential.pipe';
 import { HighligthDirective } from './directives/highligth/highligth.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CartComponent } from './components/cart/cart.component';
+
 import { MaterialModule } from '../material/material.module';
 
 
@@ -16,6 +18,7 @@ import { MaterialModule } from '../material/material.module';
     HighligthDirective,
     HeaderComponent,
     FooterComponent,
+    CartComponent
     
   ],
   exports: [
@@ -23,6 +26,7 @@ import { MaterialModule } from '../material/material.module';
     HighligthDirective,
     HeaderComponent,
     FooterComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,

@@ -60,14 +60,27 @@ export class ProductsService {
   ){}
 
   getAllProducts(){
-    return this.http.get<Product[]>(environment.urlApi);
+    return this.http.get<Product[]>(`${environment.urlApi}products/`);
     //Esta petición era para retornar el objeto de productos antes de la implementación del servicio https...
     //return this.products;
   } 
 
   getProduct(id: string){
-    return this.http.get<Product>(`${environment.urlApi}${id}`)
+    return this.http.get<Product>(`${environment.urlApi}products/${id}`)
     //return this.products.find(item => id === item.id);
   }
+
+  createProduct(product: Product){
+    return this.http.post(`${environment.urlApi}products/`, product)
+  }
+
+  updateProduct(id: string, changes: Partial<Product>){  //Se usa "Partial" Para enviar solo los datos que vamos a cambiar del objeto sin enviar todo el objeto
+    return this.http.put(`${environment.urlApi}products/${id}`, changes)
+  }
+
+  delteProduct(id:string){
+    return this.http.delete(`${environment.urlApi}products/${id}`)
+  }
+
 
 }
