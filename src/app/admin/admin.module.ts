@@ -17,11 +17,12 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { ProductsTableComponent } from './components/products-table/products-table.component';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 import { ProductsLisComponent } from './components/products-lis/products-lis.component';
+import { FormCreateComponent } from './components/form-create/form-create.component';
 
 
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, ProductsTableComponent, DashBoardComponent, ProductsLisComponent],
+  declarations: [ProductFormComponent, NavComponent, ProductsTableComponent, DashBoardComponent, ProductsLisComponent, FormCreateComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

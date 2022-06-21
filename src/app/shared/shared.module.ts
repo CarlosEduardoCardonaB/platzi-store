@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ExponentialPipe } from './pipes/exponential/exponential.pipe'; 
 import { HighligthDirective } from './directives/highligth/highligth.directive';
@@ -18,7 +19,8 @@ import { MaterialModule } from '../material/material.module';
     HighligthDirective,
     HeaderComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+
     
   ],
   exports: [
@@ -31,7 +33,8 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
