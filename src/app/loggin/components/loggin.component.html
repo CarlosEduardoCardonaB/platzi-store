@@ -1,0 +1,45 @@
+
+<form [formGroup]="formLoggin" (ngSubmit)="logginValidator($event)">
+    <!-- se envia el $event para evitar que HTM recargue la página -->
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Loggin
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <!-- <input matInput placeholder="pat@example.com" [formControl]="email" required formControlName="email"> -->
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                        <input matInput placeholder="pat@example.com" required formControlName="emailInput">
+                        <mat-error *ngIf="formLoggin.get('emailInput')?.hasError('email')">Correo inválido</mat-error>
+                    </mat-form-field> 
+                </div>
+                                  
+              </div>
+              <div class="row">
+                <div class="col-xs">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" required formControlName="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                      </mat-form-field>
+                </div>                
+              </div>
+
+              <mat-error>{{errorloggin}}</mat-error>
+                       
+            
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="formLoggin.invalid" mat-raised-button type="submit">Loggin</button>
+        </mat-card-actions>
+    </mat-card>
+
+</form>
+

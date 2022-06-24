@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { ProductsService } from 'src/app/core/services/products/products.service';
+import { MyValidators } from '../../../utils/validators';
 
 @Component({
   selector: 'app-form-create',
@@ -24,11 +25,11 @@ export class FormCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  private buildForm(){
+  private buildForm(){ //Todas estas validaciones se ven en el html como .hasError()
     this.form = this.formBuilder.group({
       id: ['',[Validators.required]],
       title: ['',[Validators.required]],
-      price: ['',[Validators.required]],
+      price: ['',[Validators.required, MyValidators.isPriceValid]], //La valdidación de MyValidators.isPriceValid está en utils/validators.ts y en el html esta en .hasError('price-invalid')
       Image: '',
       description: ['',[Validators.required]]
     });
@@ -45,8 +46,10 @@ export class FormCreateComponent implements OnInit {
         console.log(newProduct)});
         this.router.navigate(['./admin/listTable']);
     }
-    
+  }
 
+  get priceField(){
+    return this.form.get('price');
   }
 
 }

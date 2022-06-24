@@ -77,6 +77,10 @@ const routes: Routes = [
   //   component: DemoComponent
   // },
   {
+    path: 'loggin',
+    loadChildren: () => import('./loggin/loggin.module').then(m => m.logginMoudule)
+  },
+  {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
