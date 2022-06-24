@@ -12,7 +12,7 @@ import { ProductsService } from 'src/app/core/services/products/products.service
   templateUrl: './products-table.component.html',
   styleUrls: ['./products-table.component.scss']
 })
-export class ProductsTableComponent implements AfterViewInit 
+export class ProductsTableComponent implements OnInit //AfterViewInit 
 {
 
 
@@ -23,23 +23,24 @@ export class ProductsTableComponent implements AfterViewInit
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   //displayedColumns: string[] = ['id', 'name'];
-  displayedColumns: string[] = ['id', 'title', 'price', 'actions'];
   productsLt!: Product [];
+  displayedColumns: string[] = ['id', 'title', 'price', 'actions'];
+  
   
   constructor( private productService: ProductsService ) {
     //this.dataSource = new ProductsTableDataSource();    
   }
 
-  // ngOnInit(): void {
-  //   this.fetchProducts();
-  // }
-
-  ngAfterViewInit(): void {
-    // this.dataSource.sort = this.sort;
-    // this.dataSource.paginator = this.paginator;
-    // this.table.dataSource = this.dataSource;
+  ngOnInit(): void {
     this.fetchProducts();
   }
+
+  // ngAfterViewInit(): void {
+  //   // this.dataSource.sort = this.sort;
+  //   // this.dataSource.paginator = this.paginator;
+  //   // this.table.dataSource = this.dataSource;
+  //   //this.fetchProducts();
+  // }
 
   fetchProducts() {
     this.productService.getAllProducts()

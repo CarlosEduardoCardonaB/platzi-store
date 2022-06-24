@@ -15,7 +15,7 @@ export class ProductDetaliComponent implements OnInit {
   productDetail!: Product; 
 
   constructor( 
-    private route: ActivatedRoute,
+    private route: ActivatedRoute, //Este se usa para obtener el id de un producto
     private productsService: ProductsService
     ) { 
     

@@ -46,7 +46,11 @@ const routes: Routes = [
         loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
         // loadChildren: () => import('./demo/demo.module').then(m => m.demoComponentModule)
         //component: DemoComponent
-      },      
+      },
+      {
+        path: 'createUser',
+        loadChildren: () => import('./user/user.module').then(m => m.userMoudule)
+      },    
     ]
   },
 

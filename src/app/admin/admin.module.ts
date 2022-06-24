@@ -18,11 +18,18 @@ import { ProductsTableComponent } from './components/products-table/products-tab
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 import { ProductsLisComponent } from './components/products-lis/products-lis.component';
 import { FormCreateComponent } from './components/form-create/form-create.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 
 
 @NgModule({
-  declarations: [ProductFormComponent, NavComponent, ProductsTableComponent, DashBoardComponent, ProductsLisComponent, FormCreateComponent],
+  declarations: [ProductFormComponent, 
+    NavComponent, 
+    ProductsTableComponent, 
+    DashBoardComponent, 
+    ProductsLisComponent, 
+    FormCreateComponent, 
+    EditProductComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

@@ -1,0 +1,64 @@
+<form [formGroup]="form" (ngSubmit)="editProduct($event)">
+    <!-- se envia el $event para evitar que HTM recargue la página -->
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Producto
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <label>Producto: {{id}}</label>
+                </div>
+            </div>
+            
+            <!-- <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Id" formControlName="id" matInput type="text">
+                    </mat-form-field>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Title" formControlName="title" matInput type="text">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input placeholder="Price" formControlName="price" matInput type="number">
+                    </mat-form-field>
+                    <!-- Con el siguiente ngIf del div validamos si hay algun error o si se comenzó a escribir en el campo de texto. Para saber si comenzamos a escribir usamos el .dirty -->
+                    <!-- <div *ngIf="form.get('price')?.errors && form.get('price')?.dirty">
+                        <mat-error *ngIf="form.get('price')?.hasError('price_invalid')">El precio no puede superar los $10,000</mat-error>
+                        <mat-error *ngIf="form.get('price')?.hasError('required')">Este campo es obligatorio</mat-error> -->
+
+                        <!-- cuando vamos a repetir tantas veces un llamado como este "form.get('price')" podemos crear un get a una variable
+                        en el form-create.component.ts y solo la referenciamos aqui en el html. En el bloque anterior comentado usamos la forma 
+                        antigua y en el bloque de aqui abajo llamamos a la variable priceField que se encuentra en el form-create.components.ts en la 
+                        en el get: "get priceField(){..." -->
+
+                    <div *ngIf="priceField?.errors && priceField?.dirty">
+                        <mat-error *ngIf="priceField?.hasError('price_invalid')">El precio no puede superar los $10,000</mat-error>
+                        <mat-error *ngIf="priceField?.hasError('required')">Este campo es obligatorio</mat-error>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <textarea placeholder="Description" formControlName="description" matInput></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="form.invalid" mat-raised-button type="submit">Edit</button>
+        </mat-card-actions>
+    </mat-card>
+
+</form>

@@ -1,0 +1,64 @@
+
+<form [formGroup]="formCreateUser" (ngSubmit)="userValidator($event)">
+    <!-- se envia el $event para evitar que HTM recargue la página -->
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Create User
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your complete Name</mat-label>
+                        <!-- <input matInput placeholder="pat@example.com" [formControl]="email" required formControlName="email"> -->
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                        <input matInput placeholder="Elver Gomez Torva" required formControlName="nameInput">
+                        <mat-error *ngIf="formCreateUser.get('name')?.hasError('requiered')">Correo inválido</mat-error>
+                    </mat-form-field> 
+                </div>                                  
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <!-- <input matInput placeholder="pat@example.com" [formControl]="email" required formControlName="email"> -->
+                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                        <input matInput placeholder="pat@example.com" required formControlName="emailInput">
+                        <mat-error *ngIf="formCreateUser.get('emailInput')?.hasError('email')">Correo inválido</mat-error>
+                    </mat-form-field> 
+                </div>                                  
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" required formControlName="password">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        </mat-form-field>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Confirm your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" required formControlName="password2">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        </mat-form-field>
+                </div>                
+            </div>
+            <p>{{mensajeFinalizacion}}</p>
+            <!-- <mat-error>{{errorloggin}}</mat-error>            -->
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="formCreateUser.invalid" mat-raised-button type="submit">Create User</button>
+        </mat-card-actions>
+    </mat-card>
+
+</form>
+
