@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Product } from 'src/app/product.module';
 
 @Pipe({
   name: 'exponential'
@@ -14,5 +15,6 @@ export class ExponentialPipe implements PipeTransform {
   transform(value: number): unknown {
     return Math.pow(value, 2);
   }
+
 
 }

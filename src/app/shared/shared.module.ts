@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 
 import { MaterialModule } from '../material/material.module';
+import { ProdCountPipe } from './pipes/prodCount/prod-count.pipe';
 
 
 
@@ -20,6 +21,7 @@ import { MaterialModule } from '../material/material.module';
     HeaderComponent,
     FooterComponent,
     CartComponent,
+    ProdCountPipe,
 
     
   ],
@@ -28,7 +30,8 @@ import { MaterialModule } from '../material/material.module';
     HighligthDirective,
     HeaderComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+    ProdCountPipe
   ],
   imports: [
     CommonModule,

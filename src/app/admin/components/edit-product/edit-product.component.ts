@@ -20,7 +20,7 @@ export class EditProductComponent implements OnInit {
     private productServices: ProductsService,
     private router: Router,
     private activeRoute: ActivatedRoute
-  ) { 
+  ) {
     this.buildForm();
   }
 
@@ -29,7 +29,7 @@ export class EditProductComponent implements OnInit {
       this.id = params['id'];
       this.productServices.getProduct(this.id)
         .subscribe(product => {
-          this.form.patchValue(product); //Se llena el formulario con el objeto producto. 
+          this.form.patchValue(product); //Se llena el formulario con el objeto producto.
           //Otra forma de llenar la data es asi como se muestra de la siguiente manera:
           // this.form.patchValue({
           //   id: product.id,
@@ -60,8 +60,15 @@ export class EditProductComponent implements OnInit {
       const product = this.form.value;
       this.productServices.updateProduct(this.id, product)
       .subscribe((newProduct) => {
-        console.log(newProduct)});
+        console.log(newProduct);
         this.router.navigate(['./admin/listTable']);
+      });
+        //this.router.navigate(['./admin/listTable']);
+        //
+      //   setTimeout(() => {
+      //     this.router.navigate(['./admin/listTable']);
+      // }, 1000);
+      //
     }
   }
 

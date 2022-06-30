@@ -11,6 +11,7 @@ import {
 } from "@angular/core";
 //import { Product } from "../product.module";
 import { Product } from "src/app/product.module";
+import { CartService } from "src/app/core/services/cart/cart.service";
 
 @Component({
     selector: 'app-product',
@@ -32,7 +33,9 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
     //     price: 8000,
     //     description: 'Camiseta tipo Polo'
     // }
-    constructor(){
+    constructor(
+        private cartService: CartService
+    ){
         //this.product = Input();
         console.log('constructor');
     }
@@ -61,8 +64,9 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
     today = new Date();
 
     addCart(){
-        console.log("Producto añadido al carrito");
-        this.productClicked.emit(this.product.id);
+        //console.log("Producto añadido al carrito");
+        //this.productClicked.emit(this.product.id);
+        this.cartService.addCart(this.product);
     }
 
 }

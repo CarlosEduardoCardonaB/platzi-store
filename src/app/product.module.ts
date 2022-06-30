@@ -5,3 +5,7 @@ export interface Product {
     description: string;
     image: string
 }
+
+export interface groupedProduct extends Product {
+    count: number
+}

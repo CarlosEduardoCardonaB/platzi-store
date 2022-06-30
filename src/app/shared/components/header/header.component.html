@@ -13,8 +13,12 @@
                 en la ruta indicada -->            
             </nav>
         </div>
-        
-        <a mat-raised-button matBadge="4" matBadgeColor="accent">
+        <!-- de esta manera se muestra el valor quemado en el botón del carrito -->
+        <!-- <a mat-raised-button matBadge="4" matBadgeColor="accent"> -->
+        <!-- de esta manera se muestra el valor traido desde el servicio del carrito -->
+        <!-- <a mat-raised-button [matBadge]="total" matBadgeColor="accent"> -->
+        <!-- de esta manera se muestra el valor con Pipe para mejores práctias y de esta manera se hace la subscripción con pipe -->
+        <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="accent">
             <mat-icon>add_shopping_cart</mat-icon>
             Carrito
         </a>
