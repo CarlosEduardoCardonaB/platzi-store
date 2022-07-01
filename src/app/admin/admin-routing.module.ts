@@ -15,17 +15,17 @@ const routes: Routes = [
     component: NavComponent,
     children: [
       {
+        path: '',
+        component: DashBoardComponent
+      },
+      {
         path: 'create',
         component: ProductFormComponent
       },
       {
         path: 'listTable',
         component: ProductsTableComponent
-      },
-      {
-        path: 'dashBoard',
-        component: DashBoardComponent
-      },
+      },      
       {
         path: 'prodList',
         component: ProductsLisComponent

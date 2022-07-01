@@ -22,4 +22,10 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  removeProd(id: string){
+
+    this.cartService.removeCart(id);
+
+  }
+
 }

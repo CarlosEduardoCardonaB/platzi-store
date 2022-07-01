@@ -41,16 +41,11 @@ const routes: Routes = [
         //component: ContactComponent
       },
       {
-        path: 'demo',
-        canActivate: [AdminGuard], //Este es el guardían en admin.guards.ts
+        path: 'demo',        
         loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
         // loadChildren: () => import('./demo/demo.module').then(m => m.demoComponentModule)
         //component: DemoComponent
-      },
-      {
-        path: 'createUser',
-        loadChildren: () => import('./user/user.module').then(m => m.userMoudule)
-      },
+      },      
       {
         path: 'order',
         loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
@@ -85,11 +80,16 @@ const routes: Routes = [
   //   component: DemoComponent
   // },
   {
+    path: 'createUser',
+    loadChildren: () => import('./user/user.module').then(m => m.userMoudule)
+  },
+  {
     path: 'loggin',
     loadChildren: () => import('./loggin/loggin.module').then(m => m.logginMoudule)
   },
   {
     path: 'admin',
+    canActivate: [AdminGuard], //Este es el guardían en admin.guards.ts
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
   {

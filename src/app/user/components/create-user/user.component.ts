@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
+import { AuthService } from 'src/app/core/services/auth/auth.service';
 
 @Component({
   selector: 'app-user',
@@ -15,7 +17,8 @@ export class UserComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { 
     this.buildForm();
   }
@@ -34,16 +37,31 @@ export class UserComponent implements OnInit {
 
   userValidator(event: Event){
     event.preventDefault();
+    var pass = this.formCreateUser.value.password;
+    var pass2 = this.formCreateUser.value.password2;
+    var email = this.formCreateUser.value.emailInput;
+    var name = this.formCreateUser.value.nameInput;
+
 
     if(this.formCreateUser.valid 
-      && this.formCreateUser.value.nameInput.length > 3 
-      && this.formCreateUser.value.password === this.formCreateUser.value.password2
+      && name.length > 3
+      && pass.length >= 6
+      && pass === pass2
       )
     {
-      this.mensajeFinalizacion = "Usuario registrado con éxito";
-    }
-    else if (this.formCreateUser.value.password != this.formCreateUser.value.password2){
+      console.log(email, pass)
+      this.authService.createUser(email, pass)
+        .then(() => {
+          this.mensajeFinalizacion = "Usuario registrado con éxito";
+          setTimeout(() => {
+                this.router.navigate(['/loggin']);
+            }, 2000);
+    });
+      
+    }else if (pass != pass2){
       this.mensajeFinalizacion = "El password y la confiramción del pasword no coinciden";
+    }else if (pass.length < 6){
+      this.mensajeFinalizacion = "El password debe ser mínimo de 6 caracteres";
     }
     else{
       this.mensajeFinalizacion = "Error con el registro, su nombre debe superar los 3 caracteres"; 
