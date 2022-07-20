@@ -11,7 +11,7 @@ import { MyValidators } from '../../../utils/validators';
   templateUrl: './edit-product.component.html',
   styleUrls: ['./edit-product.component.scss']
 })
-export class EditProductComponent implements OnInit {
+export class EditProductComponent implements OnInit{
   form!: FormGroup;
   id!: string;
 
@@ -75,5 +75,6 @@ export class EditProductComponent implements OnInit {
   get priceField(){
     return this.form.get('price');
   }
+
 
 }

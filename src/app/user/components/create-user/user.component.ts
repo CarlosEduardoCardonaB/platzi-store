@@ -29,7 +29,7 @@ export class UserComponent implements OnInit {
   private buildForm(){
     this.formCreateUser = this.formBuilder.group({
       nameInput: ['',[Validators.required]],
-      emailInput: ['', [Validators.required, Validators.email]],
+      emailInput: ['', [Validators.required, Validators.email, Validators.minLength(11)]],
       password: ['',[Validators.required]],
       password2: ['',[Validators.required]]
     });    

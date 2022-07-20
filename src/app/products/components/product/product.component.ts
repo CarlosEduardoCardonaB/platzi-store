@@ -58,8 +58,9 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
         console.log('onDestroy');
     }
 
-    @Input() product!: Product; //Aqui cargo los productos desde otro componente. Desde app/products/products.component.ts
-    @Output() productClicked: EventEmitter<any> = new EventEmitter();
+    @Input() product!: Product; //hay otro componente enviandole datos dinamicamente a este componente. O sea que recibe otra propiedad desde otro componenete
+    //en el ngIf se itera esta variable y no toca entrar a cada propiedad. Recibir datos de un componente padre a hijo
+    @Output() productClicked: EventEmitter<any> = new EventEmitter(); //Para enviar datos a un compnente padre de hijo
 
     today = new Date();
 

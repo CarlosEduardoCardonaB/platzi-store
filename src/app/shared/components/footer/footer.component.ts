@@ -17,9 +17,9 @@ export class FooterComponent implements OnInit {
       // Validators.minLength(4), 
       // Validators.maxLength(10)      
     ]);
-    //De esta manera se escucha un cambio dinámicamente. Solo es para ver por consola lo que se escribe
-    // this.emailField.valueChanges
-    // .subscribe(value => {console.log(value)});
+    //De esta manera se escucha un cambio dinámicamente en un FORMCONTROL. Solo es para ver por consola lo que se escribe
+    this.emailField.valueChanges
+    .subscribe(value => {console.log(value)});
    }
 
   ngOnInit(): void {

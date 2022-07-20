@@ -14,7 +14,7 @@ export class ExponentialPipe implements PipeTransform {
 
   transform(value: number): unknown {
     return Math.pow(value, 2);
-  }
+  } 
 
 
 }

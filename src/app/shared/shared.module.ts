@@ -11,6 +11,7 @@ import { CartComponent } from './components/cart/cart.component';
 
 import { MaterialModule } from '../material/material.module';
 import { ProdCountPipe } from './pipes/prodCount/prod-count.pipe';
+import { ReversePipePipe } from './pipes/reverse/reverse-pipe.pipe';
 
 
 
@@ -22,6 +23,7 @@ import { ProdCountPipe } from './pipes/prodCount/prod-count.pipe';
     FooterComponent,
     CartComponent,
     ProdCountPipe,
+    ReversePipePipe,
 
     
   ],
@@ -31,7 +33,8 @@ import { ProdCountPipe } from './pipes/prodCount/prod-count.pipe';
     HeaderComponent,
     FooterComponent,
     CartComponent,
-    ProdCountPipe
+    ProdCountPipe,
+    ReversePipePipe
   ],
   imports: [
     CommonModule,

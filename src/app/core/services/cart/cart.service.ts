@@ -12,7 +12,7 @@ export class CartService {
   productos: Product[] = [];
   private cart = new BehaviorSubject<Product[]>([]);
 
-  cart$ = this.cart.asObservable();
+  cart$ = this.cart.asObservable(); //Se declara observable para que caulquier componente se subscriba a el y note los cambios en tiempo real
 
   constructor() { }
 
